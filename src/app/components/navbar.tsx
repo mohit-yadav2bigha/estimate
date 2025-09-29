@@ -12,9 +12,6 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleDropdownClick = (itemName: string) => {
-    setActiveDropdown(activeDropdown === itemName ? null : itemName);
-  };
 
   const menuItems = [
     { name: 'Home', href: '/', hasDropdown: false },

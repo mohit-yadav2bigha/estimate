@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import React from 'react';
 
 export default function Expertise() {
   // Array of 5 construction/architecture images
@@ -33,7 +33,7 @@ export default function Expertise() {
             {/* First Column */}
             <div className="lg:w-[280px] w-full mb-4 lg:mb-0">
               <p className="text-white/90 font-[250] text-sm leading-[100%] tracking-[-0.2px] mb-6">
-                At Estimating Buddies, we understand that every project starts with a dream you can trust. From residential construction estimating on single-family homes to intricate multifamily housing, we ensure your budgets are realistic, dependable, and profitable.<br /> Each project is managed by a certified professional estimator who balances technical knowledge with industry guidelines. We don't merely crunch numbers—we see the individual challenges of contractors, architects, and developers. This people-first strategy means our clients get more than raw data; they gain insights that inform smarter decisions.
+                At Estimating Buddies, we understand that every project starts with a dream you can trust. From residential construction estimating on single-family homes to intricate multifamily housing, we ensure your budgets are realistic, dependable, and profitable.<br /> Each project is managed by a certified professional estimator who balances technical knowledge with industry guidelines. We don&apos;t merely crunch numbers—we see the individual challenges of contractors, architects, and developers. This people-first strategy means our clients get more than raw data; they gain insights that inform smarter decisions.
               </p>
             </div>
             

@@ -1,11 +1,11 @@
 // components/Footer.tsx
 'use client';
 import { useEffect, useState } from "react";
+import Link from 'next/link';
 import {
   FaInstagram,
   FaLinkedinIn,
   FaFacebookF,
-  FaPinterestP,
   FaXTwitter,
   FaPhone,
   FaArrowUp,
@@ -86,9 +86,9 @@ const Footer = () => {
             <div className="lg:order-2 w-1/2 lg:w-auto">
               <h4 className="text-white font-semibold mb-4 lg:mb-7 text-sm lg:text-base ml-0 lg:ml-[300px]">Pages</h4>
               <div className="space-y-3 lg:space-y-4 ml-0 lg:ml-[300px]">
-                <a href="/" className="block text-white hover:text-blue-500 transition-colors text-xs lg:text-sm">
+                <Link href="/" className="block text-white hover:text-blue-500 transition-colors text-xs lg:text-sm">
                   Home
-                </a>
+                </Link>
                 <a href="/about" className="block text-white hover:text-blue-500 transition-colors text-xs lg:text-sm">
                   About
                 </a>

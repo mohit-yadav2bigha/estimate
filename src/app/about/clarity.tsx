@@ -13,7 +13,7 @@ export default function Clarity() {
       setCurrentPlaceholder((prev) => (prev + 1) % placeholders.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [placeholders.length]);
 
   return (
     <div className="relative w-full bg-black overflow-hidden">
@@ -58,7 +58,7 @@ export default function Clarity() {
             We know every project is different, which is why we approach each with attention to detail and a deep understanding of industry requirements. By using advanced software and proven methodologies, we ensure precision and efficiency in every estimate we provide.
           </p>
           <p className="mb-3 sm:mb-4">
-            What sets us apart is our commitment to quality, quick turnaround, and client-focused service. Whether it's a residential build, a commercial development, or a complex renovation, Estimating Buddies gives you the clarity and confidence needed to make informed project decisions.
+            What sets us apart is our commitment to quality, quick turnaround, and client-focused service. Whether it&apos;s a residential build, a commercial development, or a complex renovation, Estimating Buddies gives you the clarity and confidence needed to make informed project decisions.
           </p>
           <p>
             When you choose us, you gain more than just an estimating service, you gain a trusted partner dedicated to supporting your success at every stage of construction.

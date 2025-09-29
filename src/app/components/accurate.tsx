@@ -72,7 +72,7 @@ export default function Accurate() {
                 </p>
                 
                 <p>
-                  If you're a general contractor, subcontractor, architect, or developer, our customized construction estimating service is developed to save time, limit risk, and keep your projects within budget. Our methodology combines industry expertise with tools such as PlanSwift, Bluebeam, and RSMeans to provide cost information with accuracy you can count on.
+                  If you&apos;re a general contractor, subcontractor, architect, or developer, our customized construction estimating service is developed to save time, limit risk, and keep your projects within budget. Our methodology combines industry expertise with tools such as PlanSwift, Bluebeam, and RSMeans to provide cost information with accuracy you can count on.
                 </p>
                 
                 <p>

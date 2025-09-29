@@ -106,7 +106,7 @@ export default function Services() {
         <div className="relative px-4 lg:px-20">
           {/* Grid Container */}
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <div
                 key={service.id}
                 className="relative group cursor-pointer w-full"

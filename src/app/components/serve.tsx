@@ -19,7 +19,7 @@ export default function Serve() {
               <strong className="font-semibold">General Contractors, Subcontractors, Architects & Developers Every Step of the Way.</strong>
             </p>
             <p>
-              We are convinced that strong projects are built with accurate numbers. As a reliable estimating company, we take pride in serving diverse clients who require solid insights to make informed decisions. If you're a contractor on the go, a subcontractor getting ready to bid, an architect honing designs, or a developer with investments to plan, our experts have the know-how to assist you.
+              We are convinced that strong projects are built with accurate numbers. As a reliable estimating company, we take pride in serving diverse clients who require solid insights to make informed decisions. If you&apos;re a contractor on the go, a subcontractor getting ready to bid, an architect honing designs, or a developer with investments to plan, our experts have the know-how to assist you.
             </p>
             <p>
               For builders and homeowners, we serve as your trusted building and home construction estimator, offering comprehensive budgets to avoid surprises and stay on schedule. Our residential construction estimating is particularly tailored for single-family dwellings, multifamily residences, and custom constructions—enabling you to manage costs from blueprints to ultimate handover.
@@ -59,7 +59,7 @@ export default function Serve() {
               <strong className="font-semibold text-lg">General Contractors, Subcontractors, Architects & Developers Every Step of the Way.</strong>
             </p>
             <p>
-              We are convinced that strong projects are built with accurate numbers. As a reliable estimating company, we take pride in serving diverse clients who require solid insights to make informed decisions. If you're a contractor on the go, a subcontractor getting ready to bid, an architect honing designs, or a developer with investments to plan, our experts have the know-how to assist you.
+              We are convinced that strong projects are built with accurate numbers. As a reliable estimating company, we take pride in serving diverse clients who require solid insights to make informed decisions. If you&apos;re a contractor on the go, a subcontractor getting ready to bid, an architect honing designs, or a developer with investments to plan, our experts have the know-how to assist you.
             </p>
             <p>
               For builders and homeowners, we serve as your trusted building and home construction estimator, offering comprehensive budgets to avoid surprises and stay on schedule. Our residential construction estimating is particularly tailored for single-family dwellings, multifamily residences, and custom constructions—enabling you to manage costs from blueprints to ultimate handover.

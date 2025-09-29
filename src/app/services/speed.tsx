@@ -1,8 +1,7 @@
 'use client';
-import { useState } from 'react';
+import React from 'react';
 
 export default function Speed() {
-  const [showDetails, setShowDetails] = useState(false);
 
   return (
     <div className="relative w-full bg-black overflow-hidden min-h-[550px]">
@@ -92,7 +91,7 @@ export default function Speed() {
                 </div>
                 
                 <div className="text-white font-[350] text-[0.6rem] leading-[100%] tracking-[0%] flex-1">
-                  Clear reports with no hidden numbers — clients always know what they're paying for.
+                  Clear reports with no hidden numbers — clients always know what they&apos;re paying for.
                 </div>
                 
                 {/* Arrow */}
@@ -110,7 +109,7 @@ export default function Speed() {
                 </div>
                 
                 <div className="absolute text-white w-[320px] h-[58px] top-[100px] left-[30px] font-[350] text-[12px] leading-[100%] tracking-[0%]">
-                  Clear reports with no hidden numbers — clients always know what they're paying for.
+                  Clear reports with no hidden numbers — clients always know what they&apos;re paying for.
                 </div>
                 
                 {/* Click Button */}
