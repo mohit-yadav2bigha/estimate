@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 export default function Clients() {
   const clientCategories = [
@@ -55,8 +56,8 @@ export default function Clients() {
               className="flex flex-col items-center text-center flex-1 min-w-[120px] sm:min-w-[140px] lg:flex-1"
             >
               {/* Icon */}
-              <div className="mb-3 w-12 h-12 sm:w-14 sm:h-14 lg:w-[62.641510009765625px] lg:h-[62.641510009765625px] flex items-center justify-center">
-                <img src={client.url} alt={client.title} className="w-full h-full object-cover" />
+              <div className="mb-3 w-12 h-12 sm:w-14 sm:h-14 lg:w-[62.641510009765625px] lg:h-[62.641510009765625px] flex items-center justify-center relative">
+                <Image src={client.url} alt={client.title} fill className="object-cover" />
               </div>
 
               {/* Title */}

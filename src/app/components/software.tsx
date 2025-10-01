@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 
 export default function Software() {
   const softwareTools = [
@@ -78,19 +79,13 @@ export default function Software() {
                 className="flex flex-col items-center group cursor-pointer transition-all duration-300 hover:opacity-100 w-20 sm:w-24 md:w-28 lg:w-[129px] gap-2 sm:gap-3"
               >
                 {/* Logo Container */}
-                <div className="flex items-center justify-center transition-all duration-300 p-2 sm:p-3 lg:p-4 w-full h-16 sm:h-20 lg:h-[92px]">
-                  <img
+                <div className="flex items-center justify-center transition-all duration-300 p-2 sm:p-3 lg:p-4 w-full h-16 sm:h-20 lg:h-[92px] relative">
+                  <Image
                     src={tool.logoUrl}
                     alt={tool.name}
+                    width={80}
+                    height={60}
                     className="max-w-[60px] max-h-[45px] sm:max-w-[70px] sm:max-h-[50px] lg:max-w-[80px] lg:max-h-[60px] object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert filter-none"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      console.log('Image failed to load:', tool.logoUrl);
-                    }}
-                    onLoad={() => {
-                      console.log('Image loaded successfully:', tool.logoUrl);
-                    }}
                   />
                 </div>
                 

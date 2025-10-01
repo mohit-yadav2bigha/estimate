@@ -2,6 +2,7 @@
 'use client';
 import { useEffect, useState } from "react";
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   FaInstagram,
   FaLinkedinIn,
@@ -37,11 +38,12 @@ const Footer = () => {
           {/* Left Side - Logo and Company Info */}
           <div className="lg:order-1 flex flex-col items-start w-full lg:w-auto">
             {/* Logo */}
-            <div className="w-10 h-10 lg:w-12 lg:h-[50px] mb-4 lg:mb-6">
-              <img 
+            <div className="w-10 h-10 lg:w-12 lg:h-[50px] mb-4 lg:mb-6 relative">
+              <Image 
                 src="/images/logo.png" 
                 alt="Estimating Buddies Logo" 
-                className="w-full h-full object-contain"
+                fill
+                className="object-contain"
               />
             </div>
             

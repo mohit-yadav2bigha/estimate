@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 
 export default function Expertise() {
   // Array of 5 construction/architecture images
@@ -76,10 +77,11 @@ export default function Expertise() {
                   <div 
                     className="w-full h-[280px] lg:h-[420px] rounded-lg bg-black mb-4 relative overflow-hidden"
                   >
-                    <img 
+                    <Image 
                       src={imageSrc}
                       alt={`Construction image ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                   <p className="text-[#C8C2BD] font-[250] text-xs lg:text-[13px] leading-[18px] tracking-[-0.1px] m-0 pl-2">

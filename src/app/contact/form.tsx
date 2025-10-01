@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -109,7 +110,7 @@ export default function ContactForm() {
           <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-2xl shadow-2xl text-center max-w-md mx-4">
             <div className="text-6xl mb-4">🌟</div>
             <h2 className="text-white text-3xl font-bold mb-2">Thank You!</h2>
-            <p className="text-blue-100 text-lg">Your message has been sent successfully. We'll get back to you soon!</p>
+            <p className="text-blue-100 text-lg">Your message has been sent successfully. We&apos;ll get back to you soon!</p>
           </div>
         </div>
       )}
@@ -121,7 +122,7 @@ export default function ContactForm() {
             Get in <span className="bg-gradient-to-r from-white via-[#2997FF] to-[#0083FF] bg-clip-text text-transparent">touch</span>
           </h1>
           <p className="text-gray-300 font-medium text-[13.24px] leading-[0%] tracking-normal">
-            Reach out, and let's create a universe of possibilities together!
+            Reach out, and let&apos;s create a universe of possibilities together!
           </p>
         </div>
 
@@ -132,9 +133,9 @@ export default function ContactForm() {
             <div className="grid md:grid-cols-2 gap-6">
               {/* Left Side - Form */}
               <div>
-                <h2 className="text-white mb-2 font-semibold text-[28.97px] leading-[100%] tracking-[-0.02em]">Let's connect</h2>
+                <h2 className="text-white mb-2 font-semibold text-[28.97px] leading-[100%] tracking-[-0.02em]">Let&apos;s connect</h2>
                 <p className="text-gray-400 mb-4 font-normal text-[15.45px] leading-[100%] tracking-[-0.01em]">
-                  Let's align! Reach out and let the magic of <br />collaboration illuminate our skies.
+                  Let&apos;s align! Reach out and let the magic of <br />collaboration illuminate our skies.
                 </p>
 
                 <div className="space-y-3">
@@ -197,17 +198,18 @@ export default function ContactForm() {
               </div>
 
               {/* Right Side - Map */}
-              <div className="flex flex-col justify-center">
+              <div className="flex flex-col justify-center relative min-h-[300px]">
                 <a 
                   href="https://maps.app.goo.gl/fMW4FN4Yo48bWuhq5"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-pointer"
+                  className="cursor-pointer relative w-full h-full"
                 >
-                  <img 
+                  <Image 
                     src="/images/map.jpg" 
                     alt="Location Map"
-                    className="w-full h-full rounded-xl shadow-lg object-cover hover:opacity-90 transition-opacity"
+                    fill
+                    className="rounded-xl shadow-lg object-cover hover:opacity-90 transition-opacity"
                   />
                 </a>
               </div>
