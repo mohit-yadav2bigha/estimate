@@ -1,9 +1,10 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [showText, setShowText] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const textRef = useRef<HTMLDivElement>(null);
 
   // Background images array
   const backgroundImages = [
@@ -24,6 +25,17 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
 
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (textRef.current) {
+      const rect = textRef.current.getBoundingClientRect();
+      setMousePosition({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
+    }
+  };
+
+
   return (
     <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] xl:h-[85vh] overflow-hidden">
       {/* Sliding Background Images */}
@@ -41,10 +53,10 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
 
       {/* Main Text */}
-      <div
+      <div 
+        ref={textRef}
         className="absolute z-10 bottom-4 sm:bottom-6 md:bottom-8 lg:bottom-8 left-4 sm:left-8 md:left-16 lg:left-20 xl:left-80"
-        onMouseEnter={() => setShowText(true)}
-        onMouseLeave={() => setShowText(false)}
+        onMouseMove={handleMouseMove}
       >
         <h1
           className="uppercase font-bold tracking-wide text-blue-500 drop-shadow-lg
@@ -53,25 +65,43 @@ export default function HeroSection() {
             fontFamily:
               'SF Compact, system-ui, -apple-system, BlinkMacSystemFont, SF Compact',
             lineHeight: '100%',
+            filter: 'blur(19px) brightness(0.2)',
           }}
         >
-          <span
-            className={`transition-opacity duration-300 ${
-              showText ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            ESTIMATE RIGHT
-          </span>{' '}
-          <span
-            className={`transition-all duration-300 ${
-              showText ? 'opacity-100 blur-0' : 'opacity-30 blur-s'
-            }`}
-          >
-            BUILD
-          </span>{' '}
-          <span className="opacity-100">
-            BRIGHT.
-          </span>
+          ESTIMATE RIGHT BUILD BRIGHT.
+        </h1>
+        
+        {/* Clear text overlay with cursor radius - only letters near cursor */}
+        <h1
+          className="absolute top-0 left-0 uppercase font-bold tracking-wide text-blue-500 drop-shadow-lg
+                     text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl"
+          style={{
+            fontFamily:
+              'SF Compact, system-ui, -apple-system, BlinkMacSystemFont, SF Compact',
+            lineHeight: '100%',
+            mask: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, black 0px, black 120px, rgba(0,0,0,0.5) 130px, transparent 150px)`,
+            WebkitMask: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, black 0px, black 120px, rgba(0,0,0,0.5) 130px, transparent 150px)`,
+            filter: 'brightness(1) drop-shadow(0 0 8px rgba(0,0,0,0.3))',
+            transition: 'mask 0.1s ease-out, -webkit-mask 0.1s ease-out',
+          }}
+        >
+          ESTIMATE RIGHT BUILD BRIGHT.
+        </h1>
+        
+        {/* Always visible BUILD and BRIGHT - reduced visibility */}
+        <h1
+          className="absolute top-0 left-0 uppercase font-bold tracking-wide text-blue-500 drop-shadow-lg
+                     text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl"
+          style={{
+            fontFamily:
+              'SF Compact, system-ui, -apple-system, BlinkMacSystemFont, SF Compact',
+            lineHeight: '100%',
+            clipPath: 'polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%)',
+            filter: 'brightness(0.9)',
+            opacity: 0.4,
+          }}
+        >
+          ESTIMATE RIGHT BUILD BRIGHT.
         </h1>
       </div>
 

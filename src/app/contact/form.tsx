@@ -1,15 +1,18 @@
 'use client';
+
 import { useState } from 'react';
-import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa6';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    firstName: '',
     lastName: '',
+    firstName: '',
     email: '',
     phone: '',
     message: ''
   });
+  
+  const [showThankYou, setShowThankYou] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -19,311 +22,194 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+
+    // Replace this URL with your Google Apps Script Web App URL
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxy2IYg6K9IEJPNL1vMWJwbrfmzE67brgp8xAfW5KRP2nF9lvAwQTIMuWDoHN7CQuP11w/exec';
+
+    // Show success immediately for better UX (after 300ms)
+    setTimeout(() => {
+      setShowThankYou(true);
+      setIsSubmitting(false);
+    }, 500);
+
+    // Send data to Google Sheets in background
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    }).then(() => {
+      console.log('Form submitted successfully:', formData);
+    }).catch((error) => {
+      console.error('Error submitting form:', error);
+    });
+
+    // Reset form
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      message: ''
+    });
+
+    // Hide popup after 1 second
+    setTimeout(() => {
+      setShowThankYou(false);
+    }, 1000);
   };
 
   return (
-    <div className="w-full min-h-screen bg-black">
-      {/* Main Container */}
-      <div className="w-full bg-gray-900" style={{ background: '#111111' }}>
-        {/* Mobile Layout */}
-        <div className="block lg:hidden p-4 sm:p-6">
-          {/* Mobile Header */}
-          <div className="mb-8">
-            <h1 className="text-white text-3xl sm:text-4xl font-semibold mb-2 font-sans">
-              GET IN TOUCH
-            </h1>
-            <p className="text-white text-sm font-light font-sans">
-              Contact us if you need supports for next event
-            </p>
-          </div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 relative overflow-hidden">
+      {/* Animated background stars */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute bg-white rounded-full opacity-60"
+            style={{
+              width: Math.random() * 3 + 'px',
+              height: Math.random() * 3 + 'px',
+              top: Math.random() * 100 + '%',
+              left: Math.random() * 100 + '%',
+              animation: `twinkle ${Math.random() * 3 + 2}s infinite`
+            }}
+          />
+        ))}
+      </div>
 
-          {/* Mobile Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Name Fields */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex flex-col space-y-2">
-                <label className="text-white text-sm font-normal font-sans">
-                  First name
-                </label>
-                <input
-                  type="text"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleInputChange}
-                  className="text-white bg-transparent border border-white/40 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                />
-              </div>
-              <div className="flex flex-col space-y-2">
-                <label className="text-white text-sm font-normal font-sans">
-                  Last name
-                </label>
-                <input
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleInputChange}
-                  className="text-white bg-transparent border border-white/40 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                />
-              </div>
-            </div>
+      <style>{`
+        @keyframes twinkle {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 1; }
+        }
+        @keyframes slideUp {
+          from {
+            transform: translateY(100px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        .slide-up {
+          animation: slideUp 0.5s ease-out;
+        }
+      `}</style>
 
-            {/* Email and Phone */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex flex-col space-y-2">
-                <label className="text-white text-sm font-normal font-sans">
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="text-white bg-transparent border border-white/40 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                />
-              </div>
-              <div className="flex flex-col space-y-2">
-                <label className="text-white text-sm font-normal font-sans">
-                  Phone number
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className="text-white bg-transparent border border-white/40 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                />
-              </div>
-            </div>
-
-            {/* Message */}
-            <div className="flex flex-col space-y-2">
-              <label className="text-white text-sm font-normal font-sans">
-                Message
-              </label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleInputChange}
-                rows={4}
-                className="text-white bg-transparent border border-white/40 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none"
-              />
-            </div>
-
-            {/* Submit Button */}
-            <div className="pt-4">
-              <button
-                type="submit"
-                className="text-white font-bold text-sm rounded-full px-6 py-3 transition-all duration-300 hover:shadow-lg"
-                style={{
-                  background: 'linear-gradient(88.59deg, #2991F4 0.53%, rgba(24, 84, 142, 0) 98.31%)',
-                }}
-              >
-                Send Message
-              </button>
-            </div>
-          </form>
-
-          {/* Mobile Social Section */}
-          <div className="mt-12 bg-blue-500 rounded-lg p-6 text-center">
-            <div className="mb-4">
-              <img 
-                src="/images/map.jpg" 
-                alt="Map" 
-                onClick={() => window.open('https://www.google.com/maps/dir//13555+SE+36th+St+Suite+100+Bellevue,+WA+98006+USA/@47.5784724,-122.1593758,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x54906ea9ae6b3f9d:0x7e8acf9d27cb0a36!2m2!1d-122.1593758!2d47.5784724?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D', '_blank')}
-                className="w-full h-48 sm:h-64 object-cover rounded cursor-pointer mx-auto"
-              />
-            </div>
-            
-            <div className="text-white">
-              <p className="text-sm font-normal mb-4">Follow us on</p>
-              <div className="flex justify-center gap-3">
-                {[
-                  { icon: FaFacebook, name: 'Facebook', url: 'https://facebook.com' },
-                  { icon: FaTwitter, name: 'Twitter', url: 'https://twitter.com' },
-                  { icon: FaYoutube, name: 'YouTube', url: 'https://youtube.com' },
-                  { icon: FaInstagram, name: 'Instagram', url: 'https://instagram.com' }
-                ].map(({ icon: Icon, name, url }) => (
-                  <div
-                    key={name}
-                    onClick={() => window.open(url, '_blank')}
-                    className="bg-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer hover:shadow-lg transition-shadow duration-200"
-                  >
-                    <Icon size={16} className="text-blue-500" />
-                  </div>
-                ))}
-              </div>
-            </div>
+      {/* Thank You Popup */}
+      {showThankYou && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 slide-up">
+          <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-2xl shadow-2xl text-center max-w-md mx-4">
+            <div className="text-6xl mb-4">🌟</div>
+            <h2 className="text-white text-3xl font-bold mb-2">Thank You!</h2>
+            <p className="text-blue-100 text-lg">Your message has been sent successfully. We'll get back to you soon!</p>
           </div>
         </div>
+      )}
 
-        {/* Desktop Layout */}
-        <div className="hidden lg:flex w-full h-screen">
-          {/* Left Side - Contact Form */}
-          <div className="w-1/3 ml-44 flex flex-col justify-end pb-24 p-8" style={{ boxShadow: '0px 0px 28.22px 35.27px #2997FF1C' }}>
-            {/* Background Image */}
-            <div 
-              className="absolute inset-0 opacity-20"
-              style={{
-                backgroundImage: `url("/images/f2.jpg")`,
-                backgroundSize: '75%',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-              }}
-            />
-            
-            {/* Content Container */}
-            <div className="relative z-10">
-              {/* GET IN TOUCH Heading */}
-              <h1 className="text-white text-4xl font-semibold mb-4 font-sans">
-                GET IN TOUCH
-              </h1>
+      <div className="container mx-auto px-4 py-12 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-white mb-4 font-black text-[69.03px] leading-[80%] tracking-[-0.03em]">
+            Get in <span className="bg-gradient-to-r from-white via-[#2997FF] to-[#0083FF] bg-clip-text text-transparent">touch</span>
+          </h1>
+          <p className="text-gray-300 font-medium text-[13.24px] leading-[0%] tracking-normal">
+            Reach out, and let's create a universe of possibilities together!
+          </p>
+        </div>
 
-              {/* Subtitle */}
-              <p className="text-white text-sm font-light mb-8 font-sans">
-                Contact us if you need supports for next event
-              </p>
+        {/* Main Content */}
+        <div className="max-w-5xl mx-auto">
+          {/* Combined Container */}
+          <div className="bg-gray-800 bg-opacity-40 backdrop-blur-sm rounded-3xl p-6 shadow-2xl border border-gray-700">
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Left Side - Form */}
+              <div>
+                <h2 className="text-white mb-2 font-semibold text-[28.97px] leading-[100%] tracking-[-0.02em]">Let's connect</h2>
+                <p className="text-gray-400 mb-4 font-normal text-[15.45px] leading-[100%] tracking-[-0.01em]">
+                  Let's align! Reach out and let the magic of <br />collaboration illuminate our skies.
+                </p>
 
-              {/* Form */}
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* First Row - First Name and Last Name */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex flex-col space-y-2">
-                    <label className="text-white text-sm font-normal font-sans">
-                      First name
-                    </label>
+                <div className="space-y-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <input
                       type="text"
                       name="firstName"
+                      placeholder="First Name"
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="text-white bg-transparent border border-white/40 rounded px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                      className="w-full bg-gray-900 bg-opacity-50 text-white placeholder-gray-500 px-3 py-2 rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-sm"
                     />
-                  </div>
-                  <div className="flex flex-col space-y-2">
-                    <label className="text-white text-sm font-normal font-sans">
-                      Last name
-                    </label>
                     <input
                       type="text"
                       name="lastName"
+                      placeholder="Last Name"
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="text-white bg-transparent border border-white/40 rounded px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                      className="w-full bg-gray-900 bg-opacity-50 text-white placeholder-gray-500 px-3 py-2 rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-sm"
                     />
                   </div>
-                </div>
 
-                {/* Second Row - Email and Phone */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex flex-col space-y-2">
-                    <label className="text-white text-sm font-normal font-sans">
-                      Email address
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="text-white bg-transparent border border-white/40 rounded px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                    />
-                  </div>
-                  <div className="flex flex-col space-y-2">
-                    <label className="text-white text-sm font-normal font-sans">
-                      Phone number
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="text-white bg-transparent border border-white/40 rounded px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                    />
-                  </div>
-                </div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full bg-gray-900 bg-opacity-50 text-white placeholder-gray-500 px-3 py-2 rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-sm"
+                  />
 
-                {/* Message */}
-                <div className="flex flex-col space-y-2">
-                  <label className="text-white text-sm font-normal font-sans">
-                    Message
-                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full bg-gray-900 bg-opacity-50 text-white placeholder-gray-500 px-3 py-2 rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-sm"
+                  />
+
                   <textarea
                     name="message"
+                    placeholder="Message"
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={3}
-                    className="text-white bg-transparent border border-white/40 rounded px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none"
+                    className="w-full bg-gray-900 bg-opacity-50 text-white placeholder-gray-500 px-3 py-2 rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-none text-sm"
                   />
-                </div>
 
-                {/* Send Message Button */}
-                <div className="pt-4">
-                  <button
-                    type="submit"
-                    className="text-white font-bold text-sm rounded-full px-8 py-3 transition-all duration-300 hover:shadow-lg"
-                    style={{
-                      background: 'linear-gradient(88.59deg, #2991F4 0.53%, rgba(24, 84, 142, 0) 98.31%)',
-                    }}
-                  >
-                    Send Message
-                  </button>
+              <div className="flex justify-center">
+                <button
+                  onClick={handleSubmit}
+                  disabled={isSubmitting}
+                  className="text-white font-bold py-2 px-6 rounded-full transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed text-sm bg-gradient-to-r from-[#2991F4] to-transparent"
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </button>
+              </div>
                 </div>
-              </form>
-            </div>
-          </div>
+              </div>
 
-          {/* Right Side - Map and Social Media */}
-          <div className="flex-1 flex flex-col justify-end p-8 relative">
-            {/* Background Color */}
-            <div 
-              className="absolute opacity-100"
-              style={{
-                background: '#2997FF',
-                backgroundSize: '30%',
-                backgroundPosition: 'center top',
-                backgroundRepeat: 'no-repeat',
-                width: '73%',
-                height: '88%',
-                top: '0%',
-                left: '40%',
-                transform: 'translateX(-50%)',
-                boxShadow: '0px 0px 28.22px 35.27px #2997FF1C',
-                borderTopLeftRadius: '87px',
-                borderBottomLeftRadius: '87px'
-              }}
-            />
-            {/* Map Container */}
-            <div className="mb-8 w-3/4 max-w-lg ml-15 relative z-10">
-              <img 
-                src="/images/map.jpg" 
-                alt="Map" 
-                onClick={() => window.open('https://www.google.com/maps/dir//13555+SE+36th+St+Suite+100+Bellevue,+WA+98006+USA/@47.5784724,-122.1593758,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x54906ea9ae6b3f9d:0x7e8acf9d27cb0a36!2m2!1d-122.1593758!2d47.5784724?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D', '_blank')}
-                className="w-100 h-99 rounded cursor-pointer hover:opacity-90 transition-opacity duration-200"
-              />
-            </div>
-
-            {/* Social Media Section */}
-            <div className="text-white text-center relative z-10 pb-30">
-              <div className="flex items-center justify-center gap-4">
-                <p className="text-sm font-normal">Follow us on</p>
-                <div className="flex gap-3">
-                  {[
-                    { icon: FaFacebook, name: 'Facebook', url: 'https://facebook.com' },
-                    { icon: FaTwitter, name: 'Twitter', url: 'https://twitter.com' },
-                    { icon: FaYoutube, name: 'YouTube', url: 'https://youtube.com' },
-                    { icon: FaInstagram, name: 'Instagram', url: 'https://instagram.com' }
-                  ].map(({ icon: Icon, name, url }) => (
-                    <div
-                      key={name}
-                      onClick={() => window.open(url, '_blank')}
-                      className="bg-white rounded-full w-8 h-8 flex items-center justify-center cursor-pointer hover:shadow-lg transition-shadow duration-200"
-                    >
-                      <Icon size={14} className="text-blue-500" />
-                    </div>
-                  ))}
-                </div>
+              {/* Right Side - Map */}
+              <div className="flex flex-col justify-center">
+                <a 
+                  href="https://maps.app.goo.gl/fMW4FN4Yo48bWuhq5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer"
+                >
+                  <img 
+                    src="/images/map.jpg" 
+                    alt="Location Map"
+                    className="w-full h-full rounded-xl shadow-lg object-cover hover:opacity-90 transition-opacity"
+                  />
+                </a>
               </div>
             </div>
           </div>

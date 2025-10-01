@@ -51,7 +51,7 @@ const Footer = () => {
                 className="text-white text-[25px] font-bold leading-[34px] tracking-[-1.2px] uppercase mb-4 lg:mb-6" 
                 style={{ fontFamily: 'SF Compact, -apple-system, BlinkMacSystemFont, sans-serif', fontWeight: 790 }}
               >
-                EMPOWERING AEC PROFESSIONALS WORLDWIDE WITH FUTURE-READY BIM SKILLS.
+                TRANSFORMING COMPLEXITY INTO CLEAR, ACTIONABLE ESTIMATES.
               </h2>
               
               {/* Social Media Icons */}
@@ -143,7 +143,7 @@ const Footer = () => {
       {/* Bottom Content */}
       <div className="max-w-7xl mx-auto mt-4 lg:mt-6">
         <div className="flex flex-col md:flex-row items-center justify-between text-xs lg:text-sm">
-          <p className="text-white">Copyright © 2025 BIM Americas</p>
+          <p className="text-white">Copyright © 2025 &nbsp;| &nbsp; Estimating Buddies LLC</p>
           
           <div className="flex items-center gap-3 lg:gap-6 mt-3 lg:mt-0">
             <span className="text-white">All Rights Reserved |</span>
