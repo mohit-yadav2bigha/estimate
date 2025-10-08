@@ -80,8 +80,8 @@ export default function Navbar() {
     { name: 'Home', href: '/', hasDropdown: false },
     { name: 'About Us', href: '/about', hasDropdown: false },
     { name: 'Services', href: '/services', hasDropdown: false },
-    { name: 'Trade', href: '/Trade', hasDropdown: false },
-    { name: 'Blogs', href: '/Blogs', hasDropdown: false },
+    //{ name: 'Trade', href: '/Trade', hasDropdown: false },
+    //{ name: 'Blogs', href: '/Blogs', hasDropdown: false },
     { name: 'Contact Us', href: '/contact', hasDropdown: false },
   ];
 

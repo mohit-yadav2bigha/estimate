@@ -7,33 +7,33 @@ export default function Services() {
   const services = [
     {
       id: 1,
-      title: "Cost Estimating",
-      description: "Our Cost Estimating services ensure correct project budgets, in-depth breakdowns, and accurate cost projections. From initial planning stages to the final changes, we keep your project financially on track. With industry experience in a variety of sectors, we assist you in staying ahead of surprises and making smart, profitable decisions."
+      title: "Plumbing Estimating",
+      description: "We deliver fast, accurate takeoffs for domestic water, DWV, storm, and gas systems including fixtures, carriers, valves, heaters, pumps, hangers, sleeves, and insulation. You get clear material and labor breakdowns with crew rates, waste factors, and VE options, plus support through RFIs and change orders."
     },
     {
       id: 2,
       title: "Construction Estimating", 
-      description: "Comprehensive cost analysis for construction projects ensuring accurate budget planning, material cost estimation, and resource allocation. We provide detailed breakdowns for all construction phases from foundation to finishing."
+      description: "We specialize in both residential and commercial construction estimating services that give contractors the edge in competitive bids. Our Expert estimator team also supports homeowners and architects with construction remodeling estimating services for renovations. Every estimate is tailored to your project’s needs, ensuring accuracy and transparency from start to finish, no matter the scale."
     },
     {
       id: 3,
-      title: "General Contractors",
-      description: "Supporting general contractors with precise bidding assistance, comprehensive project cost analysis, and detailed resource planning to help secure more projects while maintaining healthy profit margins."
+      title: "Mechanical Estimating",
+      description: "At Estimating Buddies, we convert your HVAC, ductwork, and hydronic piping plans into precise, bid-ready takeoffs. Our CSI-aligned packages detail materials, labor hours, fabrication/installation factors, and value-engineering alternates so you price competitively, protect margin, and avoid change-order surprises."
     },
     {
       id: 4,
       title: "Architectural Cost Estimating",
-      description: "Specialized estimating services for architectural projects, helping architects make informed design decisions with accurate cost projections that align with client budgets and project requirements."
+      description: "Our building estimating service supports architects in designing within budget without compromising creativity. From concept to blueprint, we deliver accurate numbers that align vision with reality. Whether it’s residential or commercial construction estimating services, our estimates ensure designs stay practical, feasible, and ready for execution while meeting financial expectations."
     },
     {
       id: 5,
       title: "Quantity Takeoff",
-      description: "Precise material quantity calculations using advanced software and industry expertise. We provide detailed takeoffs for accurate material procurement and cost estimation across all project phases."
+      description: "Our estimating services include an accurate Quantity Takeoff to calculate materials with precision. From small renovations to multi-story buildings, our team delivers dependable results. With experience in construction remodeling, estimating services, and house construction price analysis, we help contractors and homeowners save time, reduce waste, and make informed purchasing decisions."
     },
     {
       id: 6,
-      title: "Outsource Estimating Services",
-      description: "Reliable outsourcing solutions for your estimating needs. Our experienced team provides consistent, high-quality estimates, allowing you to focus on core business operations while ensuring accuracy."
+      title: "Electrical Estimating",
+      description: "Our team builds disciplined estimates for power distribution, lighting, low-voltage, and fire alarm, covering gear, panels, feeders, conduit, cable tray, devices, and fixtures. We provide detailed quantities, labor units, alternates, and vendor bid-leveling to sharpen your bid day and keep budgets on track."
     }
   ];
 

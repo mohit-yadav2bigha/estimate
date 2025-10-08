@@ -5,11 +5,22 @@ import Image from 'next/image';
 export default function Expertise() {
   // Array of 5 construction/architecture images
   const images = [
-    "/E2.jpg",
-    "/E1.jpg",
-    "/E2.jpg",
-    "/E1.jpg",
-    "/E2.jpg"
+    "/a2.jpg",
+    "/a3.jpg",
+    "/a4.jpg",
+    "/a5.jpeg",
+    "/a6.jpg",
+    "/a7.jpg",
+    "/a8.webp",
+    "/a9.jpg",
+    "/a2.jpg",
+    "/a3.jpg",
+    "/a4.jpg",
+    "/a5.jpeg",
+    "/a6.jpg",
+    "/a7.jpg",
+    "/a8.webp",
+    "/a9.jpg",
   ];
 
   return (

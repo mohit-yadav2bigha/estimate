@@ -36,11 +36,18 @@ export default function Serve() {
         </div>
 
         {/* Mobile Image - Full image without cutting */}
-        <div className="w-full aspect-[520/899] bg-gradient-radial rounded-t-lg bg-cover bg-no-repeat" 
+          <div className="w-full h-96 bg-gradient-radial rounded-t-lg bg-contain bg-no-repeat bg-center overflow-hidden" 
              style={{ 
-               backgroundImage: 'url("/Creative.jpg")',
-               backgroundPosition: 'center top'
+               backgroundImage: 'url("/download.png")'
              }}>
+          <div className="w-full h-full bg-cover bg-center bg-no-repeat animate-zoom-out" 
+               style={{ 
+                 backgroundImage: 'url("/download.png")',
+                 animationDuration: '8s',
+                 animationIterationCount: 'infinite',
+                 animationTimingFunction: 'ease-in-out'
+               }}>
+          </div>
         </div>
       </div>
 
@@ -76,13 +83,18 @@ export default function Serve() {
         </div>
 
         {/* Right Side - Image */}
-        <div className="flex-1 relative">
+        <div className="flex-1 relative flex items-center justify-center overflow-hidden">
           {/* Background Gradient */}
           <div className="absolute inset-0 bg-gradient-radial rounded-l-lg" />
           
           {/* Image */}
-          <div className="w-full h-full min-h-screen bg-cover bg-center bg-no-repeat rounded-l-lg" 
-               style={{ backgroundImage: 'url("/Creative.jpg")' }}>
+          <div className="w-full h-full max-w-2xl max-h-2xl bg-contain bg-no-repeat bg-center rounded-l-lg" 
+               style={{ 
+                backgroundImage: 'url("/download.png")',
+                animationDuration: '8s',
+                animationIterationCount: 'infinite',
+                animationTimingFunction: 'ease-in-out'
+              }}>
           </div>
         </div>
       </div>

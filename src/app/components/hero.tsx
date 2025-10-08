@@ -6,13 +6,13 @@ export default function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const textRef = useRef<HTMLDivElement>(null);
 
-  // Background images array
+  // Background images array with their specific transition effects
   const backgroundImages = [
-    '/hero.png',
-    '/hero.png',
-    '/hero.png',
-    '/hero.png',
-    '/hero.png',
+    { src: '/b.jpg', effect: 'fade-scale' },
+    { src: '/home.jpg', effect: 'slide-left' },
+    { src: '/y.jpg', effect: 'slide-right' },
+    { src: '/u.jpg', effect: 'zoom-rotate' },
+    { src: '/c.png', effect: 'flip-horizontal' },
   ];
 
   useEffect(() => {
@@ -35,17 +35,55 @@ export default function HeroSection() {
     }
   };
 
+  const getTransitionClasses = (index: number) => {
+    const isActive = index === currentImageIndex;
+    const effect = backgroundImages[index].effect;
+    
+    switch (effect) {
+      case 'fade-scale':
+        return `transition-all duration-1000 ease-in-out transform ${
+          isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+        }`;
+      
+      case 'slide-left':
+        return `transition-all duration-1000 ease-in-out transform ${
+          isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
+        }`;
+      
+      case 'slide-right':
+        return `transition-all duration-1000 ease-in-out transform ${
+          isActive ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
+        }`;
+      
+      case 'zoom-rotate':
+        return `transition-all duration-1000 ease-in-out transform ${
+          isActive ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-125 rotate-12'
+        }`;
+      
+      case 'flip-horizontal':
+        return `transition-all duration-1000 ease-in-out transform ${
+          isActive ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
+        }`;
+      
+      default:
+        return `transition-all duration-1000 ease-in-out transform ${
+          isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+        }`;
+    }
+  };
+
 
   return (
     <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] xl:h-[85vh] overflow-hidden">
       {/* Sliding Background Images */}
-      {backgroundImages.map((image, index) => (
+      {backgroundImages.map((imageData, index) => (
         <div
           key={index}
-          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
-            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-          }`}
-          style={{ backgroundImage: `url('${image}')` }}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat ${getTransitionClasses(index)}`}
+          style={{ 
+            backgroundImage: `url('${imageData.src}')`,
+            filter: index === currentImageIndex ? 'brightness(1)' : 'brightness(0.8)'
+          }}
         />
       ))}
 
@@ -60,45 +98,14 @@ export default function HeroSection() {
       >
         <h1
           className="uppercase font-bold tracking-wide text-blue-500 drop-shadow-lg
-                     text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl"
+                     text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl
+                     transition-transform duration-300 ease-in-out
+                     hover:scale-110 cursor-pointer"
           style={{
             fontFamily:
               'SF Compact, system-ui, -apple-system, BlinkMacSystemFont, SF Compact',
             lineHeight: '100%',
-            filter: 'blur(19px) brightness(0.2)',
-          }}
-        >
-          ESTIMATE RIGHT BUILD BRIGHT.
-        </h1>
-        
-        {/* Clear text overlay with cursor radius - only letters near cursor */}
-        <h1
-          className="absolute top-0 left-0 uppercase font-bold tracking-wide text-blue-500 drop-shadow-lg
-                     text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl"
-          style={{
-            fontFamily:
-              'SF Compact, system-ui, -apple-system, BlinkMacSystemFont, SF Compact',
-            lineHeight: '100%',
-            mask: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, black 0px, black 120px, rgba(0,0,0,0.5) 130px, transparent 150px)`,
-            WebkitMask: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, black 0px, black 120px, rgba(0,0,0,0.5) 130px, transparent 150px)`,
-            filter: 'brightness(1) drop-shadow(0 0 8px rgba(0,0,0,0.3))',
-            transition: 'mask 0.1s ease-out, -webkit-mask 0.1s ease-out',
-          }}
-        >
-          ESTIMATE RIGHT BUILD BRIGHT.
-        </h1>
-        
-        {/* Always visible BUILD and BRIGHT - reduced visibility */}
-        <h1
-          className="absolute top-0 left-0 uppercase font-bold tracking-wide text-blue-500 drop-shadow-lg
-                     text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl"
-          style={{
-            fontFamily:
-              'SF Compact, system-ui, -apple-system, BlinkMacSystemFont, SF Compact',
-            lineHeight: '100%',
-            clipPath: 'polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%)',
-            filter: 'brightness(0.9)',
-            opacity: 0.4,
+            filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.5))',
           }}
         >
           ESTIMATE RIGHT BUILD BRIGHT.
