@@ -33,7 +33,7 @@ export default function PlumbingEstimation() {
         {/* Article Content */}
         <div className="prose prose-lg max-w-none" style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Accurate plumbing estimation is essential for winning bids and maintaining profitability. Whether you're 
+            Accurate plumbing estimation is essential for winning bids and maintaining profitability. Whether you&apos;re 
             estimating residential or commercial plumbing projects, understanding the key components and potential 
             challenges can make the difference between success and costly mistakes.
           </p>

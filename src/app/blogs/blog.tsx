@@ -3,12 +3,6 @@ import React from 'react';
 import Link from 'next/link';
 
 export default function Blog() {
-  // Debug: Check if we're in browser
-  React.useEffect(() => {
-    console.log('Blog component mounted');
-    console.log('Available images:', ['/a3.jpg', '/a4.jpg', '/a6.jpg']);
-  }, []);
-
   const blogPosts = [
     {
       id: 1,
@@ -61,17 +55,18 @@ export default function Blog() {
                     objectFit: 'cover'
                   }}
                   onError={(e) => {
-                    console.error('Image failed to load:', post.image);
-                    e.currentTarget.src = 'https://via.placeholder.com/400x256/f3f4f6/6b7280?text=Image+Not+Found';
+                    // Fallback to a simple colored div if image fails
+                    e.currentTarget.style.display = 'none';
+                    const parent = e.currentTarget.parentElement;
+                    if (parent) {
+                      parent.style.backgroundColor = '#f3f4f6';
+                      parent.style.display = 'flex';
+                      parent.style.alignItems = 'center';
+                      parent.style.justifyContent = 'center';
+                      parent.innerHTML = '<div style="color: #6b7280; font-size: 14px;">Image not available</div>';
+                    }
                   }}
-                  onLoad={() => console.log('Image loaded:', post.image)}
                 />
-                {/* Overlay Text */}
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center z-10">
-                  <p className="text-white font-semibold text-center px-4 text-sm md:text-base" style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}>
-                    {post.overlayText}
-                  </p>
-                </div>
               </div>
 
               {/* Content */}

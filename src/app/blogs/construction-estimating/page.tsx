@@ -79,7 +79,7 @@ export default function ConstructionEstimating() {
 
           <h3 className="text-xl font-semibold text-gray-900 mb-3 mt-6">Modern Estimating Tools</h3>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Today's construction estimators leverage powerful software tools like PlanSwift, Bluebeam, and RSMeans 
+            Today&apos;s construction estimators leverage powerful software tools like PlanSwift, Bluebeam, and RSMeans 
             to increase accuracy and efficiency. These tools help with digital takeoffs, cost databases, and 
             automated calculations, reducing human error and saving valuable time.
           </p>

@@ -33,7 +33,7 @@ export default function EstimatingBestPractices() {
         {/* Article Content */}
         <div className="prose prose-lg max-w-none" style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Professional cost estimation is both an art and a science. Whether you're working in construction, 
+            Professional cost estimation is both an art and a science. Whether you&apos;re working in construction, 
             electrical, HVAC, or any other trade, following proven best practices ensures your estimates are 
             accurate, competitive, and profitable. This guide covers essential strategies used by top estimators.
           </p>
@@ -67,7 +67,7 @@ export default function EstimatingBestPractices() {
           <div className="bg-blue-50 p-6 rounded-lg my-8">
             <h4 className="text-lg font-semibold text-blue-900 mb-3">Golden Rule of Estimating</h4>
             <p className="text-blue-800">
-              "Measure twice, estimate once." Errors in quantity takeoffs multiply throughout your estimate. 
+              &quot;Measure twice, estimate once.&quot; Errors in quantity takeoffs multiply throughout your estimate. 
               Spending extra time on accurate measurements saves money and reputation. A 10% error in takeoff 
               can mean the difference between profit and loss on a project.
             </p>
