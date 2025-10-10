@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from 'react';
 
 export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const textRef = useRef<HTMLDivElement>(null);
 
   // Background images array with their specific transition effects
@@ -26,12 +25,11 @@ export default function HeroSection() {
   }, [backgroundImages.length]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
+    // Mouse move handler for potential future use
     if (textRef.current) {
       const rect = textRef.current.getBoundingClientRect();
-      setMousePosition({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
-      });
+      // Future mouse tracking functionality can be added here
+      console.log('Mouse position:', e.clientX - rect.left, e.clientY - rect.top);
     }
   };
 

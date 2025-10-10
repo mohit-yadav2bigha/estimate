@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function PlumbingEstimation() {
   return (
@@ -22,10 +23,12 @@ export default function PlumbingEstimation() {
             How to Estimate Plumbing Projects Accurately
           </h1>
           <div className="relative h-64 md:h-96 rounded-lg overflow-hidden mb-6">
-            <img
+            <Image
               src="/a2.jpg"
               alt="Plumbing Estimation"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 80vw"
             />
           </div>
         </div>

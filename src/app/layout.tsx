@@ -2,7 +2,6 @@ import './globals.css'
 import type { Metadata } from 'next'
 import Navbar from './components/navbar'
 import Footer from './components/footer'
-import Head from 'next/head'  
 import Script from 'next/script'
 
 export const metadata: Metadata = {

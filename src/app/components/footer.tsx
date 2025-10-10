@@ -74,10 +74,6 @@ const Footer = () => {
                    className="text-white hover:text-blue-500 transition-colors w-3 lg:w-[11px]">
                   <FaLinkedinIn />
                 </a>
-                <a href="https://www.youtube.com/draftingbuddies" target="_blank" rel="noopener noreferrer" 
-                   className="text-white hover:text-blue-500 transition-colors w-3 lg:w-[11px]">
-                  <FaYoutube />
-                </a>
               </div>
             </div>
           </div>
