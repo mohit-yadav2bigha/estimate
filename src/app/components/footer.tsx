@@ -119,7 +119,7 @@ const Footer = () => {
                     <span className="text-white text-xs lg:text-sm">✉</span>
                   </div>
                   <a href="mailto:contact@estimatingbuddies.com" className="text-white text-xs lg:text-sm hover:text-blue-500 transition-colors">
-                    contact@estimatingbuddies.com
+                    info@estimatingbuddies.com
                   </a>
                 </div>
                 

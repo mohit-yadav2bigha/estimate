@@ -93,11 +93,11 @@ export default function HeroSection() {
       {/* Main Text */}
       <div 
         ref={textRef}
-        className="absolute z-10 bottom-4 sm:bottom-6 md:bottom-8 lg:bottom-8 left-4 sm:left-8 md:left-16 lg:left-20 xl:left-80"
+        className="absolute z-10 bottom-4 sm:bottom-6 md:bottom-8 lg:bottom-8 left-1/2 -translate-x-1/2"
         onMouseMove={handleMouseMove}
       >
         <h1
-          className="uppercase font-bold tracking-wide text-blue-500 drop-shadow-lg
+          className="uppercase font-bold tracking-wide text-blue-500 drop-shadow-lg text-center whitespace-nowrap
                      text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl
                      transition-transform duration-300 ease-in-out
                      hover:scale-110 cursor-pointer"
