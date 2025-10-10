@@ -65,7 +65,10 @@ export default function Software() {
         
         {/* Header Section */}
         <div className="mb-8 sm:mb-12 lg:mb-20 text-center">
-          <h1 className="text-white mx-auto font-sf-compact font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[50px] leading-tight sm:leading-tight md:leading-tight lg:leading-[64px] lg:tracking-[-1.2px] text-center flex items-center justify-center max-w-full px-4 sm:px-6 lg:px-0 lg:w-[1002px] lg:h-[128px]">
+          <h1 
+            className="text-white mx-auto font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[50px] leading-tight sm:leading-tight md:leading-tight lg:leading-[64px] lg:tracking-[-1.2px] text-center flex items-center justify-center max-w-full px-4 sm:px-6 lg:px-0 lg:w-[1002px] lg:h-[128px]"
+            style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+          >
             What software do we use for home building cost estimating services?
           </h1>
         </div>
@@ -91,7 +94,10 @@ export default function Software() {
                 
                 {/* Tool Name */}
                 <div className="w-full h-4 sm:h-5 lg:h-[21px]">
-                  <p className="text-white/70 group-hover:text-white transition-all duration-300 font-sf-compact font-light text-xs sm:text-sm lg:text-base leading-[133%] tracking-normal text-center m-0">
+                  <p 
+                    className="text-white/70 group-hover:text-white transition-all duration-300 font-light text-xs sm:text-sm lg:text-base leading-[133%] tracking-normal text-center m-0"
+                    style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+                  >
                     {tool.name}
                   </p>
                 </div>

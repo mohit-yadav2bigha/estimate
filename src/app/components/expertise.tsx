@@ -32,7 +32,10 @@ export default function Expertise() {
           
           {/* Left Side Content - Main Heading */}
           <div className="lg:w-[500px] lg:h-[300px] w-full mb-6 lg:mb-0">
-            <h1 className="text-white font-[590] text-2xl lg:text-[40px] leading-8 lg:leading-[54px] tracking-[-0.8px] lg:tracking-[-1.2px] mb-0">
+            <h1 
+              className="text-white font-[590] text-2xl lg:text-[40px] leading-8 lg:leading-[54px] tracking-[-0.8px] lg:tracking-[-1.2px] mb-0"
+              style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+            >
               <span className="text-[#C8C2BD]">Accuracy, trust, and expertise  — </span> 
               <span className="font-[350]">
                 everything your project needs to succeed.
@@ -41,7 +44,10 @@ export default function Expertise() {
           </div>
 
           {/* Right Side Content - Two Column Text */}
-          <div className="flex flex-col lg:flex-row lg:gap-8 lg:w-[520px] lg:h-[400px] w-full">
+          <div 
+            className="flex flex-col lg:flex-row lg:gap-8 lg:w-[520px] lg:h-[400px] w-full"
+            style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+          >
             {/* First Column */}
             <div className="lg:w-[280px] w-full mb-4 lg:mb-0">
               <p className="text-white/90 font-[250] text-sm leading-[100%] tracking-[-0.2px] mb-6">
@@ -73,11 +79,7 @@ export default function Expertise() {
             {/* Duplicate images for seamless loop */}
             {[...images, ...images].map((imageSrc, index) => {
               const texts = [
-                "Click to launch the Camera app. Click again to instantly take a photo.",
-                "In video mode, click to start recording.",
-                "A light press opens recent apps.",
-                "Double-click to return to home screen.",
-                "Press and hold for voice commands."
+                "",
               ];
               
               return (
@@ -95,7 +97,10 @@ export default function Expertise() {
                       className="object-cover"
                     />
                   </div>
-                  <p className="text-[#C8C2BD] font-[250] text-xs lg:text-[13px] leading-[18px] tracking-[-0.1px] m-0 pl-2">
+                  <p 
+                    className="text-[#C8C2BD] font-[250] text-xs lg:text-[13px] leading-[18px] tracking-[-0.1px] m-0 pl-2"
+                    style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+                  >
                     {texts[index % texts.length]}
                   </p>
                 </div>

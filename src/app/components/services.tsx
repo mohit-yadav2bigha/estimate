@@ -44,7 +44,7 @@ export default function Services() {
       <div 
         className="absolute hidden lg:block"
         style={{
-          width: '778px',
+          width: '1100px',
           height: '778px',
           top: '200px',
           right: '100px',

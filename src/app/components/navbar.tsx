@@ -81,7 +81,7 @@ export default function Navbar() {
     { name: 'About Us', href: '/about', hasDropdown: false },
     { name: 'Services', href: '/services', hasDropdown: false },
     //{ name: 'Trade', href: '/Trade', hasDropdown: false },
-    //{ name: 'Blogs', href: '/Blogs', hasDropdown: false },
+    { name: 'Blogs', href: '/blogs', hasDropdown: false },
     { name: 'Contact Us', href: '/contact', hasDropdown: false },
   ];
 
@@ -90,7 +90,7 @@ export default function Navbar() {
       {/* Spacer div to push content below fixed navbar */}
       <div className="h-16 sm:h-20"></div>
       
-      <header className="fixed top-0 w-full z-50 h-16 sm:h-20 bg-black shadow-md shadow-black/20">
+      <header className="fixed top-0 w-full z-50 h-16 sm:h-20 bg-black/90 backdrop-blur-sm shadow-md shadow-white/10">
         <nav className="flex items-center justify-between px-4 sm:px-6 lg:px-12 py-3 sm:py-4 text-white h-full">
           
           {/* Logo - Left Side */}
@@ -107,7 +107,10 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu - Center */}
-          <div className="hidden lg:flex items-center space-x-10">
+          <div 
+            className="hidden lg:flex items-center space-x-10"
+            style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+          >
             {menuItems.map((item) => (
               <Link 
                 key={item.name}
@@ -130,7 +133,8 @@ export default function Navbar() {
                 background: 'linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%)',
                 fontSize: '16px',
                 fontWeight: '350',
-                lineHeight: '133%'
+                lineHeight: '133%',
+                fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont'
               }}
             >
               <span className="text-white font-light z-10 relative">Get Quotes</span>
@@ -156,7 +160,10 @@ export default function Navbar() {
 
         {/* Mobile Menu Dropdown */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full right-0 bg-black border-t border-gray-800 shadow-lg w-48">
+          <div 
+            className="lg:hidden absolute top-full right-0 bg-black border-t border-gray-800 shadow-lg w-48"
+            style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+          >
             <div className="px-3 py-2 space-y-1">
               {menuItems.map((item) => (
                 <Link 
@@ -192,6 +199,7 @@ export default function Navbar() {
           <div 
             className="relative bg-[#2a2a2a] rounded-lg p-8 w-[90%] max-w-md shadow-2xl border-2 border-blue-500"
             onClick={(e) => e.stopPropagation()}
+            style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
           >
             {/* Close Button */}
             <button
@@ -275,7 +283,8 @@ export default function Navbar() {
                   disabled={isSubmitting}
                   className="px-8 py-2.5 text-white font-medium rounded-md transition-all duration-200 hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{
-                    background: 'linear-gradient(88.59deg, #2991F4 0.53%, rgba(24, 84, 142, 0) 98.31%)'
+                    background: 'linear-gradient(88.59deg, #2991F4 0.53%, rgba(24, 84, 142, 0) 98.31%)',
+                    fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont'
                   }}
                 >
                   {isSubmitting ? 'Submitting...' : 'Get quote'}

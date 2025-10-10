@@ -107,7 +107,10 @@ export default function ContactForm() {
       {/* Thank You Popup */}
       {showThankYou && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 slide-up">
-          <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-2xl shadow-2xl text-center max-w-md mx-4">
+          <div 
+            className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-2xl shadow-2xl text-center max-w-md mx-4"
+            style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+          >
             <div className="text-6xl mb-4">🌟</div>
             <h2 className="text-white text-3xl font-bold mb-2">Thank You!</h2>
             <p className="text-blue-100 text-lg">Your message has been sent successfully. We&apos;ll get back to you soon!</p>
@@ -117,7 +120,10 @@ export default function ContactForm() {
 
       <div className="container mx-auto px-4 py-12 relative z-10">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div 
+          className="text-center mb-12"
+          style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+        >
           <h1 className="text-white mb-4 font-black text-[69.03px] leading-[80%] tracking-[-0.03em]">
             Get in <span className="bg-gradient-to-r from-white via-[#2997FF] to-[#0083FF] bg-clip-text text-transparent">touch</span>
           </h1>
@@ -132,7 +138,7 @@ export default function ContactForm() {
           <div className="bg-gray-800 bg-opacity-40 backdrop-blur-sm rounded-3xl p-6 shadow-2xl border border-gray-700">
             <div className="grid md:grid-cols-2 gap-6">
               {/* Left Side - Form */}
-              <div>
+              <div style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}>
                 <h2 className="text-white mb-2 font-semibold text-[28.97px] leading-[100%] tracking-[-0.02em]">Let&apos;s connect</h2>
                 <p className="text-gray-400 mb-4 font-normal text-[15.45px] leading-[100%] tracking-[-0.01em]">
                   Let&apos;s align! Reach out and let the magic of <br />collaboration illuminate our skies.
@@ -147,6 +153,7 @@ export default function ContactForm() {
                       value={formData.firstName}
                       onChange={handleInputChange}
                       className="w-full bg-gray-900 bg-opacity-50 text-white placeholder-gray-500 px-3 py-2 rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-sm"
+                      style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
                     />
                     <input
                       type="text"
@@ -155,6 +162,7 @@ export default function ContactForm() {
                       value={formData.lastName}
                       onChange={handleInputChange}
                       className="w-full bg-gray-900 bg-opacity-50 text-white placeholder-gray-500 px-3 py-2 rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-sm"
+                      style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
                     />
                   </div>
 
@@ -165,6 +173,7 @@ export default function ContactForm() {
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full bg-gray-900 bg-opacity-50 text-white placeholder-gray-500 px-3 py-2 rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-sm"
+                    style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
                   />
 
                   <input
@@ -174,6 +183,7 @@ export default function ContactForm() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     className="w-full bg-gray-900 bg-opacity-50 text-white placeholder-gray-500 px-3 py-2 rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-sm"
+                    style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
                   />
 
                   <textarea
@@ -183,6 +193,7 @@ export default function ContactForm() {
                     onChange={handleInputChange}
                     rows={3}
                     className="w-full bg-gray-900 bg-opacity-50 text-white placeholder-gray-500 px-3 py-2 rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-none text-sm"
+                    style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
                   />
 
               <div className="flex justify-center">
@@ -190,6 +201,7 @@ export default function ContactForm() {
                   onClick={handleSubmit}
                   disabled={isSubmitting}
                   className="text-white font-bold py-2 px-6 rounded-full transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed text-sm bg-gradient-to-r from-[#2991F4] to-transparent"
+                  style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>

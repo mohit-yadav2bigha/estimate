@@ -36,7 +36,10 @@ export default function Clients() {
       <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between max-w-7xl mx-auto px-4 gap-8 lg:gap-[80px]">
         
         {/* Left Section - Heading and Description */}
-        <div className="flex flex-col w-full lg:w-[464px]">
+        <div 
+          className="flex flex-col w-full lg:w-[464px]"
+          style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+        >
           {/* Main Heading */}
           <div className="text-white mb-4 text-4xl sm:text-5xl md:text-6xl lg:text-[76.25px] lg:leading-[84px] lg:tracking-[-1.2px] flex items-center font-[790] whitespace-nowrap">
             Our Clients
@@ -61,12 +64,18 @@ export default function Clients() {
               </div>
 
               {/* Title */}
-              <div className="text-white mb-2 text-xs sm:text-sm lg:text-[12px] lg:leading-[1.2] lg:font-[556] text-center">
+              <div 
+                className="text-white mb-2 text-xs sm:text-sm lg:text-[12px] lg:leading-[1.2] lg:font-[556] text-center"
+                style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+              >
                 {client.title}
               </div>
 
               {/* Description */}
-              <div className="text-white text-xs sm:text-xs lg:text-[10px] lg:leading-[1.3] lg:font-[350] text-center">
+              <div 
+                className="text-white text-xs sm:text-xs lg:text-[10px] lg:leading-[1.3] lg:font-[350] text-center"
+                style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+              >
                 {client.description}
               </div>
             </div>

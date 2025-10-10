@@ -9,12 +9,18 @@ export default function Serve() {
         {/* Mobile Content */}
         <div className="px-4 py-8 space-y-6">
           {/* Main Heading */}
-          <h2 className="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight">
+          <h2 
+            className="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight"
+            style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+          >
             Who We Serve
           </h2>
 
           {/* Content Text */}
-          <div className="text-white text-sm sm:text-base leading-relaxed space-y-4">
+          <div 
+            className="text-white text-sm sm:text-base leading-relaxed space-y-4"
+            style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+          >
             <p>
               <strong className="font-semibold">General Contractors, Subcontractors, Architects & Developers Every Step of the Way.</strong>
             </p>
@@ -30,7 +36,10 @@ export default function Serve() {
           </div>
 
           {/* Know More Button */}
-          <button className="w-32 h-10 bg-gradient-to-r from-white/30 to-transparent rounded-lg text-white font-medium text-sm transition-all duration-300 hover:opacity-80">
+          <button 
+            className="w-32 h-10 bg-gradient-to-r from-white/30 to-transparent rounded-lg text-white font-medium text-sm transition-all duration-300 hover:opacity-80"
+            style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+          >
             Know More
           </button>
         </div>
@@ -56,12 +65,18 @@ export default function Serve() {
         {/* Left Side - Text Content */}
         <div className="flex-1 max-w-2xl px-8 xl:px-16 py-16 flex flex-col justify-center">
           {/* Main Heading */}
-          <h2 className="text-white text-4xl xl:text-5xl font-bold leading-tight tracking-tight mb-8">
+          <h2 
+            className="text-white text-4xl xl:text-5xl font-bold leading-tight tracking-tight mb-8"
+            style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+          >
             Who We Serve
           </h2>
 
           {/* Content Text */}
-          <div className="text-white text-base xl:text-lg leading-relaxed space-y-6 mb-8">
+          <div 
+            className="text-white text-base xl:text-lg leading-relaxed space-y-6 mb-8"
+            style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+          >
             <p>
               <strong className="font-semibold text-lg">General Contractors, Subcontractors, Architects & Developers Every Step of the Way.</strong>
             </p>
@@ -77,7 +92,10 @@ export default function Serve() {
           </div>
 
           {/* Know More Button */}
-          <button className="w-36 h-12 bg-gradient-to-r from-white/30 to-transparent rounded-lg text-white font-medium text-sm transition-all duration-300 hover:opacity-80 flex items-center justify-center">
+          <button 
+            className="w-36 h-12 bg-gradient-to-r from-white/30 to-transparent rounded-lg text-white font-medium text-sm transition-all duration-300 hover:opacity-80 flex items-center justify-center"
+            style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+          >
             Know More
           </button>
         </div>

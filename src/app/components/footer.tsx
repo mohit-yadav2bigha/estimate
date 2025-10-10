@@ -85,17 +85,20 @@ const Footer = () => {
           {/* Center and Right Side - Side by side on mobile, separate on laptop */}
           <div className="flex flex-row lg:contents">
             {/* Center - Navigation Pages */}
-            <div className="lg:order-2 w-1/2 lg:w-auto">
-              <h4 className="text-white font-semibold mb-4 lg:mb-7 text-sm lg:text-base ml-0 lg:ml-[300px]">Pages</h4>
-              <div className="space-y-3 lg:space-y-4 ml-0 lg:ml-[300px]">
+            <div 
+              className="lg:order-2 w-1/2 lg:w-auto lg:flex lg:flex-col lg:items-center"
+              style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+            >
+              <h4 className="text-white font-semibold mb-4 lg:mb-7 text-sm lg:text-base ml-0 lg:ml-8">Pages</h4>
+              <div className="space-y-3 lg:space-y-4 ml-0 lg:ml-15">
                 <Link href="/" className="block text-white hover:text-blue-500 transition-colors text-xs lg:text-sm">
                   Home
                 </Link>
                 <a href="/about" className="block text-white hover:text-blue-500 transition-colors text-xs lg:text-sm">
-                  About
+                  About Us
                 </a>
                 <a href="/services" className="block text-white hover:text-blue-500 transition-colors text-xs lg:text-sm">
-                  Service
+                  Services
                 </a>
                 <a href="/contact" className="block text-white hover:text-blue-500 transition-colors text-xs lg:text-sm">
                   Contact Us
@@ -104,7 +107,10 @@ const Footer = () => {
             </div>
 
             {/* Right Side - Contact Info */}
-            <div className="lg:order-3 w-1/2 lg:w-[418px]">
+            <div 
+              className="lg:order-3 w-1/2 lg:w-[418px]"
+              style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+            >
               <h4 className="text-white font-semibold mb-4 lg:mb-6 text-sm lg:text-base ml-0 lg:ml-[100px]">Contact us</h4>
               <div className="space-y-4 lg:space-y-6 ml-0 lg:ml-[100px]">
                 {/* Email */}
@@ -143,7 +149,10 @@ const Footer = () => {
       </div>
 
       {/* Bottom Content */}
-      <div className="max-w-7xl mx-auto mt-4 lg:mt-6">
+      <div 
+        className="max-w-7xl mx-auto mt-4 lg:mt-6"
+        style={{ fontFamily: 'SF Compact, system-ui, -apple-system, BlinkMacSystemFont' }}
+      >
         <div className="flex flex-col md:flex-row items-center justify-between text-xs lg:text-sm">
           <p className="text-white">Copyright © 2025 &nbsp;| &nbsp; Estimating Buddies LLC</p>
           
