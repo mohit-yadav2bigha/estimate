@@ -10,7 +10,6 @@ import {
   FaXTwitter,
   FaPhone,
   FaArrowUp,
-  FaYoutube,
 } from "react-icons/fa6";
 import { FaLocationDot } from "react-icons/fa6";
 
@@ -154,13 +153,17 @@ const Footer = () => {
           
           <div className="flex items-center gap-3 lg:gap-6 mt-3 lg:mt-0">
             <span className="text-white">All Rights Reserved |</span>
-            <a href="/terms-and-conditions" className="text-white hover:text-blue-500 transition-colors underline">
-              Terms and Conditions
-            </a>
+            <Link href="/termsandcondition">
+              <span className="text-white hover:text-blue-500 transition-colors underline">
+                  Terms and Conditions
+             </span>
+            </Link>
             <span className="text-white">|</span>
-            <a href="/privacy-policy" className="text-white hover:text-blue-500 transition-colors underline">
-              Privacy Policy
-            </a>
+            <Link href="/privacy-policy">
+              <span className="text-white hover:text-blue-500 transition-colors underline">
+                  Privacy Policy
+             </span>
+        </Link>
           </div>
         </div>
       </div>
